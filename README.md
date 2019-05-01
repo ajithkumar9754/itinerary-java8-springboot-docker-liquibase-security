@@ -17,9 +17,9 @@ checkout code base from below github url
 
 https://github.com/ajithkumar9754/itinerary-repo.git
 
-Build and Run
 
 Install Docker 
+
 Install Maven
 
 cd itinerary-repo-master
@@ -30,28 +30,28 @@ mvn clean install -DskipTests && docker-compose up --build
 -------------------------------------------Technology stack used-------------------------------------------------
 
 
-Java 8 
-Springboot  for Microservices 
-Spring Security for secured Endpoints - Enabled spring security and used inline memory authentication . refer WebSecurityConfig.java for details
+1. Java 8 
+2. Springboot  for Microservices 
+3. Spring Security for secured Endpoints - Enabled spring security and used inline memory authentication . refer WebSecurityConfig.java for details
 
-Swagger library for API documentation - Did some customisation on top of default configurations of swagger, Please refer SwaggerConfig.java for details
+4. Swagger library for API documentation - Did some customisation on top of default configurations of swagger, Please refer SwaggerConfig.java for details
 
-SpringSlueth for distributed tracing Log will be consisting of TraceI and SpanId to track application logs which might be in different machines
+5. SpringSlueth for distributed tracing , Log information will be consisting of TraceId and SpanId to track application logs which are in different machines
 
-Eureka for service registry and discovery - Centralised registry for all the services. all the services will be  attached to Eureka server as a client
+6. Eureka for service registry and discovery - Centralised registry for all the services. all the services will be  attached to Eureka server as a client
 
-Zulu gateway for API gateway will route all the incoming request to corresponding backend services
+7. Zulu gateway for API gateway will route all the incoming request to corresponding backend services
 
-Docker for containerisation , create images for each components and used docker compose to manage all the docker containers . refer docker-compose.yml for details
+8. Docker for containerisation , create images for each components and used docker compose to manage all the docker containers . refer docker-compose.yml for details
 
-Apache maven-3.6.0 -For build application
+9. Apache maven-3.6.0 -For build application
 
-MySql database : MySQL  used as the database for the application. Used mysql docker images to configure database
+10. MySql database : MySQL  used as the database for the application. Used mysql docker images to create database server
 
-Liquibase library to manage database management, like database and table creation based on the liquibase configuration files. Enabled liquibase for springboot. Please refer liquibase folder in itinerary-management-service for the implementation details.
+11. Liquibase library to manage database management, like database and table creation based on the liquibase configuration files. Enabled liquibase for springboot. Please refer liquibase folder in itinerary-management-service for the implementation details.
 
 
-FeignClient - is used for micro-service to micro-service communication(INFORMATION-SERVICE	 --> ITINERARY-MANAGEMENT-SERVICE service calls)
+12. FeignClient - is used for micro-service to micro-service communication(INFORMATION-SERVICE	 --> ITINERARY-MANAGEMENT-SERVICE service calls)
 
 
 -------------------------------------------VERIFY Service-------------------------------------------------
