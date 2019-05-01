@@ -92,21 +92,21 @@ From swagger UI we  can able to invoke API's. Please use the proper data to invo
 -------------------------------------------Future improvements ------------------------------------------------
 
 
-Spring Client config with docker. Tried to implement it, But having some issues with container to container communication- Disabled the feature in this app
+1 .Spring Client config with docker. Tried to implement it, But having some issues with container to container communication- Disabled the feature in this app
 
-Spring Security with oAuth2- We can integrate spring security with OAuth2. It will give security for applications, with token validity and all
+2. Spring Security with oAuth2- We can integrate spring security with OAuth2. It will give security for applications, with token validity and al
 
-Central logging mechanism for the docker based applications with logback.xml configurations
+3. Central logging mechanism for the docker based applications with logback.xml configurations
 
-Regarding the security we can use java vulnerability libraries to scan request and responses.
+4. Regarding the security we can use java security vulnerability scan libraries (ESAPI) to scan request and responses.
 
-SSL integration in docker container
+5.SSL integration in docker container
 
-Data encryption in the database while saving and decryption while retrieval
+6.Data encryption in the database while saving and decryption while retrieval
 
-Important Note
+most Important thing
 
-<--We can use docker-compose or kubernetes scale up feature for application scaling based on the peak loads--->
+7. <--We can use docker-compose or kubernetes scale up feature for application scaling based on the peak loads--->
 
 
 -------------------------------------------Testing Via PostMan-Sample reference--------------------------------
