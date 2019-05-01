@@ -101,6 +101,12 @@ SSL integration in docker container
 
 Data encryption in the database while saving and decryption while retrieval
 
+Important Note
+
+<--We can use docker-compose or kubernetes scale up feature for application scaling based on the peak loads--->
+
+
+
 
 
 
