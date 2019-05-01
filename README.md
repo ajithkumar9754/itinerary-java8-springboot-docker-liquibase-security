@@ -63,8 +63,11 @@ Please verify the Eureka server to confirm all the services UP and Running with 
 http://localhost:8761/
 
 Application	Name                PORT 
+
 INFORMATION-SERVICE	            8085
+
 ITINERARY-API-GATEWAY	        9090
+
 ITINERARY-MANAGEMENT-SERVICE	8081
 
 
