@@ -100,7 +100,7 @@ From swagger UI we  can able to invoke API's. Please use the proper data to invo
 
 4. Regarding the security we can use java security vulnerability scan libraries (ESAPI) to scan request and responses.
 
-5.SSL integration in docker container
+5.SSL integration in docker container for each microservices
 
 6.Data encryption in the database while saving and decryption while retrieval
 
