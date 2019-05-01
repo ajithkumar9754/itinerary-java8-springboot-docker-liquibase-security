@@ -12,6 +12,8 @@ ITINERARY-MANAGEMENT-SERVICE
 REGISTRYSERVICE
 
 -------------------------------------------BUILD and Deployment------------------------------------------------
+
+
 Git pull
 
 https://github.com/ajithkumar9754/itinerary-repo.git
@@ -27,6 +29,7 @@ mvn clean install -DskipTests && docker-compose up --build
 
 
 -------------------------------------------Technology stack used-------------------------------------------------
+
 
 Java 8 
 Springboot  for Microservices 
@@ -53,6 +56,7 @@ FeignClient - is used for micro-service to micro-service communication(INFORMATI
 
 
 -------------------------------------------VERIFY Service-------------------------------------------------
+
 
 Once application is UP and running with below command
 
@@ -87,6 +91,7 @@ Please note ITINERARY-MANAGEMENT-SERVICE endpoints are restricted to 'admin' use
 From swagger UI we  can able to invoke API's. Please use the proper data to invoke. Please refer the user guide .
 
 -------------------------------------------Future improvements ------------------------------------------------
+
 
 Spring Client config with docker. Tried to implement it, But having some issues with container to container communication- Disabled the feature in this app
 
