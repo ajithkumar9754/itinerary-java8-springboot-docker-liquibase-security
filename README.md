@@ -11,7 +11,7 @@ ITINERARY-MANAGEMENT-SERVICE
 
 REGISTRYSERVICE
 
--------------------------------------------BUILD and Deployment-------------------------------------------------------
+-------------------------------------------BUILD and Deployment------------------------------------------------
 Git pull
 
 https://github.com/ajithkumar9754/itinerary-repo.git
@@ -26,7 +26,7 @@ cd itinerary-repo-master
 mvn clean install -DskipTests && docker-compose up --build
 
 
--------------------------------------------Technology stack used-------------------------------------------------------
+-------------------------------------------Technology stack used-------------------------------------------------
 
 Java 8 
 Springboot  for Microservices 
@@ -52,7 +52,7 @@ Liquibase library to manage database management, like database and table creatio
 FeignClient - is used for micro-service to micro-service communication(INFORMATION-SERVICE	 --> ITINERARY-MANAGEMENT-SERVICE service calls)
 
 
--------------------------------------------VERIFY Service---------------------------------------------------------
+-------------------------------------------VERIFY Service-------------------------------------------------
 
 Once application is UP and running with below command
 
@@ -86,7 +86,7 @@ Please note ITINERARY-MANAGEMENT-SERVICE endpoints are restricted to 'admin' use
 
 From swagger UI we  can able to invoke API's. Please use the proper data to invoke. Please refer the user guide .
 
--------------------------------------------Future improvements -------------------------------------------------------
+-------------------------------------------Future improvements ------------------------------------------------
 
 Spring Client config with docker. Tried to implement it, But having some issues with container to container communication- Disabled the feature in this app
 
@@ -105,7 +105,7 @@ Important Note
 <--We can use docker-compose or kubernetes scale up feature for application scaling based on the peak loads--->
 
 
--------------------------------------------Testing Via PostMan-Sample reference---------------------------------------
+-------------------------------------------Testing Via PostMan-Sample reference--------------------------------
 
 
 
