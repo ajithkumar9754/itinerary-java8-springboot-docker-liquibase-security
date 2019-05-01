@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: registry
+eureka:
+  server:
+    peer-eureka-status-refresh-time-interval-ms: 1000
+    enable-self-preservation: false
+    response-cache-update-interval-ms: 1000
+    eviction-interval-timer-in-ms: 30000
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://registryservice:8761/eureka/
+server:
+  port: 8761

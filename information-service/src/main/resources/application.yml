@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: information-service
+  management:
+    security:
+      enabled: false  
+eureka:
+  client:
+    enabled: true
+    serviceUrl:
+      defaultZone: http://registryservice:8761/eureka
+    register-with-eureka: true
+    
+    
+server:
+  port: 8085
+  
+ribbon:
+  ConnectTimeout: 30000
+  ReadTimeout: 990000
+  maxAutoRetries: 1
+  MaxAutoRetriesNextServer: 2
+  eureka:
+    enabled: true  
+    
+roleproperties:
+  traveluser: traveluser
+  traveluserPassword: traveluser@Password@1    

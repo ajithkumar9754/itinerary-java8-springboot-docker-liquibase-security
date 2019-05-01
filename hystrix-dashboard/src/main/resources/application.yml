@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: itinerary-hystrix-dashboard
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://registryservice:8761/eureka
+    healthcheck:
+      enabled: true
+    lease:
+      duration: 5
+
+turbine:
+  clusterNameExpression: new String("default")
+  appConfig: ITINERARY-MANAGEMENT-SERVICE,INFORMATION-SERVICE,ITINERARY-API-GATEWAY,REGISTRYSERVICE
+  combineHostPort: true
+server:
+  port: 9091

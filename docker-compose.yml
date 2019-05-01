@@ -1,0 +1,108 @@
+version: '2'
+services:
+    mysql-docker-container:
+        image: mysql:latest
+        environment:
+            - MYSQL_ROOT_PASSWORD=root@pawword@2
+            - MYSQL_DATABASE=itineraryBackEndDB
+            - MYSQL_USER=itineraryUser
+            - MYSQL_PASSWORD=P@ssword@12
+        volumes:
+            - /data/mysql
+    #config-server:
+        #image: itinerary/config-server
+        #build: config-server
+        #mem_limit: 512M
+        #ports:
+            #- "8888:8888"  
+        #depends_on:
+           # - registryservice 
+        #links:
+           # - registryservice:registryservice 
+    registryservice:
+        image: itinerary/registryservice
+        build: registryservice
+        mem_limit: 512M
+        ports:
+            - "8761:8761"           
+    api-gateway-service:
+        image: itinerary/gatewayservice
+        restart: always
+        build: ./api-gateway-service
+        working_dir: /api-gateway-service
+        volumes:
+            - ./api-gateway-service:/api-gateway-service
+            - ~/.m2:/root/.m2
+        ports:
+            - "9090:9090"
+        expose: [9090]
+        command: mvn clean spring-boot:run
+        depends_on:
+            - registryservice 
+            #- config-server 
+        links:
+            - registryservice:registryservice 
+            - itinerary-management-service:itinerary-management-service
+            #- config-server:config-server  
+    itinerary-management-service:
+        image: itinerary/management-service
+        restart: always
+        build: ./itinerary-management-service
+        working_dir: /itinerary-management-service
+        volumes:
+            - ./itinerary-management-service:/itinerary-management-service
+            - ~/.m2:/root/.m2
+        ports:
+            - "8081:8081"
+        expose: [8081]
+        command: mvn clean spring-boot:run
+        depends_on:
+            - mysql-docker-container
+            #- config-server 
+            - registryservice  
+        links:
+            - registryservice:registryservice 
+            #- config-server:config-server    
+    information-service:
+        image: itinerary/information-service
+        restart: always
+        build: ./information-service
+        working_dir: /information-service
+        volumes:
+            - ./information-service:/information-service
+            - ~/.m2:/root/.m2
+        ports:
+            - "8085:8085"
+        expose: [8085]
+        command: mvn clean spring-boot:run
+        depends_on:
+            #- config-server 
+            - registryservice  
+        links:
+            - registryservice:registryservice 
+            - api-gateway-service:api-gateway-service
+            - itinerary-management-service:itinerary-management-service
+           # - config-server:config-server 
+    #hystrix-dashboard:
+        #image: itinerary/hystrix-dashboard
+        #restart: always
+        #build: ./hystrix-dashboard
+        #working_dir: /hystrix-dashboard
+        #volumes:
+           # - ./hystrix-dashboard:/hystrix-dashboard
+            #- ~/.m2:/root/.m2
+        #ports:
+           # - "9091:9091"
+        #expose: [9091]
+        #command: mvn clean spring-boot:run
+        #depends_on:
+            #- registryservice 
+        #links:
+            #- registryservice:registryservice 
+           # - itinerary-management-service:itinerary-management-service
+            #- information-service:information-service        
+
+
+            
+    
+          

@@ -1,0 +1,48 @@
+spring:
+  application:
+    name: itinerary-api-gateway
+  cloud:
+    config:
+      enabled: false
+      discovery:
+        enabled: false
+      fail-fast: false
+
+#Eureka Client
+eureka:
+  client:
+    enabled: true
+    serviceUrl:
+      defaultZone:  http://registryservice:8761/eureka
+    register-with-eureka: true
+
+
+ribbon:
+  ConnectTimeout: 30000
+  ReadTimeout: 990000
+  maxAutoRetries: 1
+  MaxAutoRetriesNextServer: 2
+  eureka:
+    enabled: true
+  
+
+zuul:
+  host:
+    connect-timeout-millis: 60000
+    socket-timeout-millis: 60000
+  ignoredServices: '**'
+  sslHostnameValidationEnabled: false
+  routes:
+   management-service:
+     path: /api/v1/management/**
+     service-id: ITINERARY-MANAGEMENT-SERVICE
+     strip-prefix: false
+     sensitiveHeaders:
+   information-service:
+     path: /api/v1/information/**
+     service-id: INFORMATION-SERVICE
+     strip-prefix: false  
+     sensitiveHeaders:
+
+server:
+  port: 9090

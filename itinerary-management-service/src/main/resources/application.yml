@@ -1,0 +1,61 @@
+spring:
+  application:
+    name: itinerary-management-service
+  datasource:
+    url: jdbc:mysql://mysql-docker-container:3306/itineraryBackEndDB
+    username: itineraryUser
+    password: P@ssword@12
+    hikari:
+      maximum-pool-size: 2
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          batch_size: 100
+        order_inserts: true
+        order_updates: true 
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+        ddl-auto: update         
+  liquibase:
+    enabled: true
+    change-log: classpath:liquibase/master.xml 
+  management:
+    security:
+      enabled: false
+      
+#Eureka Client
+eureka:
+  client:
+    enabled: true
+    serviceUrl:
+      defaultZone:  http://registryservice:8761/eureka
+    register-with-eureka: true
+   
+ribbon:
+  ConnectTimeout: 30000
+  ReadTimeout: 990000
+  maxAutoRetries: 1
+  MaxAutoRetriesNextServer: 2
+  eureka:
+    enabled: true    
+
+
+    
+roleproperties:
+  adminUser: admin
+  adminUserPassword: admin@Password@1
+  traveluser: traveluser
+  traveluserPassword: traveluser@Password@1
+  
+itinerary: 
+  default:
+    city:
+      source: cochin  
+      
+#Server
+server:
+  port: 8081   
+  
+   
+  
