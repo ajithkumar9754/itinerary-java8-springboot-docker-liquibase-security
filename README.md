@@ -78,6 +78,7 @@ Please use Swagger UI for API reference
 We have 2 services 
 
 1 . ITINERARY-MANAGEMENT-SERVICE  ---> http://localhost:8081/swagger-ui.html#/travel-management-controller   --> admin users
+
 2. INFORMATION-SERVICE	          ---> http://localhost:8085/swagger-ui.html#/travel-information-controller  --> travelUser
 
 
