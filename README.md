@@ -16,11 +16,12 @@ Git pull
 
 https://github.com/ajithkumar9754/itinerary-repo.git
 
-
 Build and Run
 
 Install Docker 
 Install Maven
+
+cd itinerary-repo-master
 
 mvn clean install -DskipTests && docker-compose up --build
 
