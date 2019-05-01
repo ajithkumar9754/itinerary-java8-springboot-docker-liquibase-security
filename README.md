@@ -13,7 +13,7 @@ REGISTRYSERVICE
 -------------------------------------------BUILD and Deployment------------------------------------------------
 
 
-Git pull
+checkout code base from below github url
 
 https://github.com/ajithkumar9754/itinerary-repo.git
 
