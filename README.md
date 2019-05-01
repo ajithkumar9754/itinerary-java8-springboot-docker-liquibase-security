@@ -99,6 +99,79 @@ Data encryption in the database while saving and decryption while retrieval
 
 
 
+REST API 's few sample invocations via REST client like postman
+
+Travel Management Controller
+
+
+
+POST  http://localhost:9090/api/v1/management/travelinfo   -->  Create Travel Information
+
+
+Authorization  -- >  Basic YWRtaW46YWRtaW5AUGFzc3dvcmRAMQ==
+
+
+travelInfoDTO Request Body -->
+
+{
+  "arrivalTime": "2019-01-19 04:30",
+  "departureTime": "2019-01-19 02:30",
+  "destinationCity": "delhi",
+  "numberOfConnections": 1,
+  "sourceCity": "cochin"
+}
+
+
+
+GET  http://localhost:9090/api/v1/management/travelinfo/route?sourcecity=cochin&destinationcity=delhi  -->  Get Shortest route between 2 cities
+
+
+response 
+
+
+{
+  "travelId": 1,
+  "sourceCity": "cochin",
+  "destinationCity": "delhi",
+  "arrivalTime": "2019-01-19 04:30:00.0",
+  "departureTime": "2019-01-19 02:30:00.0",
+  "numberOfConnections": 1,
+  "duration": 2
+}
+
+
+
+GET /api/v1/management/travelinfo    -->  Get All the Travel Informations between 2 cities
+
+
+PUT  /api/v1/management/travelinfo  --> Update Travel Information
+
+
+GET  /api/v1/management/travelinfo/{traveliId   --> Get Travel Information with TravelId
+
+
+GET   /api/v1/management/travelinfo/route   -->  Get Shortest route between 2 cities
+
+_______________________________________________________________________________________
+
+
+
+Travel Information Controller- This will be consume above 'Travel Management Controller ' with user 'traveluser'
+
+
+GET /api/v1/information/travel  --> Get All the Travel Informations between 2 cities
+
+GET /api/v1/information/travel/route  -->Get Shortest route between 2 cities
+
+
+
+GET http://localhost:9090/api/v1/information/travel/route?sourcecity=cochin&destinationcity=delhi
+
+Authorization  -- >  Basic dHJhdmVsdXNlcjp0cmF2ZWx1c2VyQFBhc3N3b3JkQDE=
+
+
+
+
 
 
 
