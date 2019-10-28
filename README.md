@@ -40,7 +40,7 @@ mvn clean install -DskipTests && docker-compose up --build
 
 6. Eureka for service registry and discovery - Centralised registry for all the services. all the services will be  attached to Eureka server as a client
 
-7. Zulu gateway for API gateway will route all the incoming request to corresponding backend services
+7. Zuul gateway for API gateway will route all the incoming request to corresponding backend services
 
 8. Docker for containerisation , create images for each components and used docker compose to manage all the docker containers . refer docker-compose.yml for details
 
